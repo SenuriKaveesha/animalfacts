@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheetah Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff3b2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cheetah Facts</h1>
+        <p id="fact">Click the button to learn a new fact about cheetahs!</p>
+        <button id="newFactButton">Show Random Fact</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const facts = [
+                "Cheetahs are the fastest land animals, capable of reaching speeds up to 75 mph (120 km/h).",
+                "They have a unique black tear stripe pattern on their faces, which helps reduce glare from the sun.",
+                "Cheetahs are carnivores and primarily hunt during the day, relying on their speed and stealth.",
+                "Unlike other big cats, cheetahs cannot roar; instead, they communicate with a variety of sounds including purrs, chirps, and growls.",
+                "Cheetahs have a lightweight build with long legs and a flexible spine, which aids in their incredible speed.",
+                "They are found in parts of Africa and Iran, with the majority of the population residing in sub-Saharan Africa.",
+                "Cheetahs have a short lifespan in the wild, typically living around 10 to 12 years.",
+                "They are classified as vulnerable due to habitat loss, human-wildlife conflict, and illegal wildlife trade.",
+                "Cheetahs have a gestation period of about 90 to 95 days, and females typically give birth to a litter of 3 to 5 cubs.",
+                "Cheetahs rely on their keen eyesight to spot prey from a distance, often targeting smaller antelopes and gazelles."
+            ];
+
+            const factElement = document.getElementById('fact');
+            const button = document.getElementById('newFactButton');
+
+            button.addEventListener('click', () => {
+                const randomIndex = Math.floor(Math.random() * facts.length);
+                factElement.textContent = facts[randomIndex];
+            });
+        });
+    </script>
+</body>
+</html>
